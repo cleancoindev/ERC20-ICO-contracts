@@ -35,17 +35,17 @@ contract ICO is Pausable{
         admin = msg.sender;
         tokenPrice = _tokenPrice;
         minPurchase = 500; // 500 $
-        crowdSalePhasesTime = block.timestamp + 30 days;
+        crowdSalePhasesTime = block.timestamp + 60 days;
         
         // Total available token for ico is 12.5 billion
         availableTokensForPrivateSale = tokenSaleAmount.mul(25).div(100);
         availableTokensForPreSale = tokenSaleAmount.mul(20).div(100);
         
-        availableTokensForCrowdSale = tokenSaleAmount.mul(25).div(100); // for 4 weeks of crowdsale
+        availableTokensForCrowdSale = tokenSaleAmount.mul(55).div(100); // for 4 weeks of crowdsale
         availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(15).div(100); // for 1st week of crowdsale 
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(10).div(100); // for 2nd week of crowdsale
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(5).div(100); // for 3rd week of crowdsale
-        availableTokensForCrowdSaleFirstWeek = tokenSaleAmount.mul(25).div(100); // for 4th week of crowdsale
+        availableTokensForCrowdSaleSecondWeek = tokenSaleAmount.mul(10).div(100); // for 2nd week of crowdsale
+        availableTokensForCrowdSaleThreeWeek = tokenSaleAmount.mul(5).div(100); // for 3rd week of crowdsale
+        availableTokensForCrowdSaleFourWeek = tokenSaleAmount.mul(25).div(100); // for 4th week of crowdsale
     }
     
     function setTokenAddressandSendTokenAmount(address tokenAddress) public onlyAdmin{
